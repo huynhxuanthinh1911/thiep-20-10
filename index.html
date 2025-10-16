@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp chúc mừng 20/10 💐</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Màn hình nhập mật khẩu -->
+    <div id="password-screen" class="password-container">
+        <div class="password-box">
+            <h2>🔐 Nhập mật khẩu</h2>
+            <p>Để mở thiệp chúc mừng đặc biệt</p>
+            <input type="password" id="password-input" placeholder="Nhập ngày sinh (ddMM)" maxlength="4">
+            <button onclick="checkPassword()">Mở thiệp</button>
+            <p id="error-message" class="error"></p>
+        </div>
+    </div>
+
+    <!-- Màn hình thiệp chúc mừng -->
+    <div id="card-screen" class="card-container hidden">
+        <!-- Canvas cho hiệu ứng pháo hoa -->
+        <canvas id="fireworks-canvas"></canvas>
+
+        <div class="greeting-card">
+            <!-- Ảnh của hai người -->
+            <div class="couple-photo">
+                <img src="images/couple.jpg" alt="Our Photo">
+            </div>
+
+            <h1 class="title">🌸 Chúc mừng ngày Phụ nữ Việt Nam 20/10 🌸</h1>
+            
+            <div class="message">
+                <p>Gửi đến em yêu của anh,</p>
+                <p>💕 Chúc em luôn xinh đẹp, tươi trẻ và hạnh phúc!</p>
+                <p>🌹 Mãi là nguồn cảm hứng và niềm vui của anh!</p>
+                <p>✨ Yêu em nhiều lắm! ✨</p>
+                <p class="signature">- Người yêu em -</p>
+            </div>
+
+            <!-- Countdown đến ngày kỷ niệm -->
+            <div class="countdown-section">
+                <h3>⏰ Đếm ngược đến ngày kỷ niệm của chúng mình</h3>
+                <div class="countdown">
+                    <div class="time-box">
+                        <span id="days" class="time-value">00</span>
+                        <span class="time-label">Ngày</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours" class="time-value">00</span>
+                        <span class="time-label">Giờ</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes" class="time-value">00</span>
+                        <span class="time-label">Phút</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds" class="time-value">00</span>
+                        <span class="time-label">Giây</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hoa rơi -->
+        <div class="flower">🌸</div>
+        <div class="flower">🌺</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌷</div>
+        <div class="flower">🌹</div>
+        <div class="flower">💐</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🏵️</div>
+        <div class="flower">🌸</div>
+        <div class="flower">🌺</div>
+
+        <!-- Bướm bay 3D -->
+        <div class="butterfly-3d" style="left: 5%; top: 20%;">
+            <div class="butterfly-container">
+                <div class="wing left-wing"></div>
+                <div class="wing right-wing"></div>
+                <div class="butterfly-body"></div>
+            </div>
+        </div>
+        <div class="butterfly-3d" style="left: 80%; top: 30%;">
+            <div class="butterfly-container">
+                <div class="wing left-wing"></div>
+                <div class="wing right-wing"></div>
+                <div class="butterfly-body"></div>
+            </div>
+        </div>
+        <div class="butterfly-3d" style="left: 15%; top: 60%;">
+            <div class="butterfly-container">
+                <div class="wing left-wing"></div>
+                <div class="wing right-wing"></div>
+                <div class="butterfly-body"></div>
+            </div>
+        </div>
+        <div class="butterfly-3d" style="left: 70%; top: 70%;">
+            <div class="butterfly-container">
+                <div class="wing left-wing"></div>
+                <div class="wing right-wing"></div>
+                <div class="butterfly-body"></div>
+            </div>
+        </div>
+        <div class="butterfly-3d" style="left: 40%; top: 10%;">
+            <div class="butterfly-container">
+                <div class="wing left-wing"></div>
+                <div class="wing right-wing"></div>
+                <div class="butterfly-body"></div>
+            </div>
+        </div>
+
+        <!-- Audio background -->
+        <audio id="background-music" loop>
+            <source src="audio/romantic-song.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Nút điều khiển nhạc -->
+        <button id="music-toggle" class="music-button">🔊</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
