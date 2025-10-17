@@ -19,7 +19,7 @@ function checkPassword() {
         
         // Khởi động các hiệu ứng
         initFireworks();
-        startCountdown();
+        startDaysTogether();
         playBackgroundMusic();
     } else {
         errorMessage.textContent = '❌ Mật khẩu không đúng! Thử lại nhé 😊';
@@ -39,17 +39,17 @@ document.getElementById('password-input').addEventListener('keypress', function(
     }
 });
 
-// ============ Countdown Timer ============
-function startCountdown() {
-    // Đặt ngày kỷ niệm (năm, tháng-1, ngày, giờ, phút, giây)
-    const anniversaryDate = new Date(2025, 10, 25, 0, 0, 0).getTime(); // 25/11/2025
+// ============ Đếm số ngày đã bên nhau ============
+function startDaysTogether() {
+    // Ngày bắt đầu yêu nhau: 05/04/2025
+    const startDate = new Date(2025, 3, 5, 0, 0, 0).getTime(); // tháng 3 = April (0-indexed)
     
-    const countdownInterval = setInterval(function() {
+    const countInterval = setInterval(function() {
         const now = new Date().getTime();
-        const distance = anniversaryDate - now;
+        const distance = now - startDate; // Đếm từ ngày bắt đầu đến hiện tại
         
         if (distance < 0) {
-            clearInterval(countdownInterval);
+            // Nếu chưa đến ngày kỷ niệm
             document.getElementById('days').textContent = '00';
             document.getElementById('hours').textContent = '00';
             document.getElementById('minutes').textContent = '00';
